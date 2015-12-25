@@ -16,5 +16,5 @@ twitter_username: rcasatta
 github_username:  rcasatta
 
 # Build settings
-markdown: kramdown
+# markdown: kramdown
 permalink: /:year/:month/:day/:title/
