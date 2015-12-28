@@ -1,0 +1,38 @@
+---
+/people/adam.back/:
+  title: Adam Back
+---
+/company/blockstream/:
+  title: Blockstream
+---
+/feed.xml:
+  title: 
+---
+/people/gregory.maxwell/:
+  title: Gregory Maxwell
+---
+/help/:
+  title: Help
+---
+/:
+  title: 
+---
+/css/main.css:
+  title: 
+---
+/people/matt.corallo/:
+  title: Matt Corallo
+---
+/people/riccardo.casatta/:
+  title: Riccardo Casatta
+---
+/2015/12/25/Blockstream-founded:
+  relations:
+  - subject:
+    - /people/adam.back
+    - /people/matt.corallo
+    - /people/gregory.maxwell
+    verb: found
+    object:
+    - /company/blockstream
+  title: Blockstream founded
