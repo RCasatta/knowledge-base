@@ -1,0 +1,12 @@
+---
+/2013/09/25/Blockstream-founded/:
+  relations:
+  - subject:
+    - /people/adam.back
+    - /people/matt.corallo
+    - /people/gregory.maxwell
+    verb: found
+    object:
+    - /company/blockstream
+  title: Blockstream founded
+  date: 2013-09-25 00:00:00.000000000 +02:00

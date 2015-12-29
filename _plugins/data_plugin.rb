@@ -8,26 +8,32 @@ module Jekyll
       @base = base
       @name = 'data.yml'
 
-      fileName = base + "/_data/data.yml"
-      outFile = File.open( fileName , 'w')
+      dataPath = base + "/_data"
+      relationsFile = File.open( dataPath + "/relations.yml" , 'w')
+      relations = {}
+      propertiesFile    = File.open( dataPath + "/properties.yml" , 'w')
+      properties = {}
 
       site.pages.each do |page|
-        current = {}
-        values = {}
-        id = page.url;
-        values['title'] = page.data['title']
-        current[ id ] = values;
-        outFile.write( current.to_yaml );
+        layout = page.data['layout']
+        title = page.data['title']
+        if(layout == 'people' or layout == 'projects')
+          values = {}
+          id = page.url;
+          values['title'] = title
+          properties[id] = values
+        end
       end
+      propertiesFile.write( properties.to_yaml );
 
-      site.posts.each do |post|
-        current = {}
+      site.posts.docs.each do |post|
         values = {}
-        values['relations'] = post.relations
-        values['title'] = post.title
-        current[post.url] = values;
-        outFile.write( current.to_yaml );
+        values['relations'] = post.data['relations']
+        values['title'] = post.data['title']
+        values['date'] = post.data['date']
+        relations[post.url] = values;
       end
+      relationsFile.write( relations.to_yaml );
 
     end
   end
@@ -36,10 +42,7 @@ module Jekyll
     safe true
 
     def generate(site)
-      p 'CommonDataGenerator:generate'
-
       CommonData.new(site, site.source)
-
     end
   end
 

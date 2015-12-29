@@ -1,5 +1,5 @@
 ---
-layout: company
+layout: projects
 title: Blockstream
 ---
 

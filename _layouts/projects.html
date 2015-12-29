@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% for current in site.data.relations %}
+    <p>{{ current }}</p>
+    <p>{{ current[1] }}</p>
+    {% assign value = current[1].relations[0] %}
+    <p>value = {{ value }}</p>
+    {% assign subject = value.subject %}
+    <p>{{ value.subject }}</p>
+    <p>{{ value.verb }}</p>
+    <p>{{ value.object }}</p>
+
+  {% endfor %}
+
+</article>
