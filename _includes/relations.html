@@ -23,11 +23,21 @@
   {% for relation in relprop.relations %}
     <p>
     {% for cursub in relation.subject %}
-      <a href="{{ site.baseurl }}{{ cursub }}">{{ site.data.properties[cursub].title }}</a>
+      {% if cursub == page.url %}
+        <strong>{{ site.data.properties[cursub].title }}</strong>
+      {% else %}
+        <a href="{{ site.baseurl }}{{ cursub }}">{{ site.data.properties[cursub].title }}</a>
+      {% endif %}
+      {% unless forloop.last %},{% endunless %}
     {% endfor %}
     {{ relation.verb }}
     {% for curobj in relation.object %}
-      <a href="{{ site.baseurl }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>
+      {% if curobj == page.url %}
+        <strong>{{ site.data.properties[curobj].title }}</strong>
+      {% else %}
+        <a href="{{ site.baseurl }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>
+      {% endif %}
+      {% unless forloop.last %},{% endunless %}
     {% endfor %}
      @ <a href="{{ site.baseurl }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
     </p>
