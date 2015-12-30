@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: pretty
 ---
 <article class="post">
 
@@ -12,15 +13,19 @@ layout: default
   </div>
 
   {% for current in site.data.relations %}
-    <p>{{ current }}</p>
-    <p>{{ current[1] }}</p>
-    {% assign value = current[1].relations[0] %}
-    <p>value = {{ value }}</p>
-    {% assign subject = value.subject %}
-    <p>{{ value.subject }}</p>
-    <p>{{ value.verb }}</p>
-    <p>{{ value.object }}</p>
-
+    {% for relation in current[1].relations %}
+      {% for cursub in relation.subject %}
+        {% if cursub == page.url %}
+          <p><strong>{{ cursub }}</strong></p>
+        {% endif %}
+      {% endfor %}
+      {% for curobj in relation.object %}
+        {% if curobj == page.url %}
+          <p><strong>{{ curobj }}</strong></p>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
   {% endfor %}
+
 
 </article>
