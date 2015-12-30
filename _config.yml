@@ -17,4 +17,8 @@ github_username:  rcasatta
 
 # Build settings
 # markdown: kramdown
-permalink: /:year/:month/:day/:title/
+
+# looks the following setting has problems with pages
+# permalink: /:year/:month/:day/:title/
+
+permalink: pretty
