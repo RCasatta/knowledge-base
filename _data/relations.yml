@@ -1,5 +1,14 @@
 ---
-/2013/09/25/Blockstream-founded/:
+/1997/01/25/new-antispam-countermeasure-invented/:
+  relations:
+  - subject:
+    - /people/adam.back/
+    verb: invent
+    object:
+    - /projects/hashcash/
+  title: New antispam countermeasure invented
+  date: 1997-01-25 00:00:00.000000000 +01:00
+/2013/09/25/blockstream-founded/:
   relations:
   - subject:
     - /people/adam.back/
@@ -10,3 +19,13 @@
     - /projects/blockstream/
   title: Blockstream founded
   date: 2013-09-25 00:00:00.000000000 +02:00
+/2014/01/25/investment-in-ethereum/:
+  relations:
+  - subject:
+    - /people/riccardo.casatta/
+    verb: invest
+    object:
+    - /projects/ethereum/
+    value: 750
+  title: Investment in Ethereum
+  date: 2014-01-25 00:00:00.000000000 +01:00

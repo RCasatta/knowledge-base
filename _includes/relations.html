@@ -1,0 +1,18 @@
+
+
+{% capture relations %}
+  {% for current in site.data.relations %}
+    {% for relation in current[1].relations %}
+      {% for cursub in relation.subject %}
+        {% if cursub == page.url %}
+          {{ current[0] }}
+        {% endif %}
+      {% endfor %}
+      {% for curobj in relation.object %}
+        {% if curobj == page.url %}
+          {{ current[0] }}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+{% endcapture %}

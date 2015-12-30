@@ -3,4 +3,4 @@ layout: people
 title: Riccardo Casatta
 ---
 
-Free text with markdown
+The coolest guy :)

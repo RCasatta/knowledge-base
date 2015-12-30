@@ -3,9 +3,15 @@
   title: Adam Back
 /projects/blockstream/:
   title: Blockstream
+/projects/ethereum/:
+  title: Ethereum
 /people/gregory.maxwell/:
   title: Gregory Maxwell
+/projects/hashcash/:
+  title: Hashcash
 /people/matt.corallo/:
   title: Matt Corallo
 /people/riccardo.casatta/:
   title: Riccardo Casatta
+/people/vitalik.buterin/:
+  title: Vitalik Buterin
