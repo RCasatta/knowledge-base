@@ -16,3 +16,20 @@
     {% endfor %}
   {% endfor %}
 {% endcapture %}
+
+{% assign relationsarr = relations | split:' '  %}
+{% for key in relationsarr %}
+  {% assign relprop = site.data.relations[key] %}
+  {% for relation in relprop.relations %}
+    <p>
+    {% for cursub in relation.subject %}
+      <a href="{{ site.baseurl }}{{ cursub }}">{{ site.data.properties[cursub].title }}</a>
+    {% endfor %}
+    {{ relation.verb }}
+    {% for curobj in relation.object %}
+      <a href="{{ site.baseurl }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>
+    {% endfor %}
+     @ <a href="{{ site.baseurl }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
+    </p>
+  {% endfor %}
+{% endfor %}
