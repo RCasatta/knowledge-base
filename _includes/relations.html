@@ -2,15 +2,19 @@
 
 {% capture relations %}
   {% for current in site.data.relations %}
+    {% assign relkey = current[0] ) %}
+    {% if relkey == page.url %}
+      {{ relkey }}
+    {% endif %}
     {% for relation in current[1].relations %}
       {% for cursub in relation.subject %}
         {% if cursub == page.url %}
-          {{ current[0] }}
+          {{ relkey }}
         {% endif %}
       {% endfor %}
       {% for curobj in relation.object %}
         {% if curobj == page.url %}
-          {{ current[0] }}
+          {{ relkey }}
         {% endif %}
       {% endfor %}
     {% endfor %}
@@ -38,7 +42,12 @@
         <a href="{{ site.baseurl }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>{% unless forloop.last %},{% endunless %}
       {% endif %}
     {% endfor %}
-     @ <a href="{{ site.baseurl }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
+     @
+      {% if key == page.url %}
+        {{ relprop.date | date: "%b %-d, %Y" }}
+      {% else %}
+        <a href="{{ site.baseurl }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
+      {% endif %}
    </li>
   {% endfor %}
 {% endfor %}

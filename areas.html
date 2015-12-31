@@ -1,0 +1,31 @@
+---
+layout: default
+title: Areas
+permalink: /areas/
+---
+
+{% capture areas %}
+  {% for current in site.data.properties %}
+    {% assign array = current[0] | split:'/' %}
+      {% if array[1] == 'areas' %}
+        {{ current[0] }}
+      {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign sortedareas = areas | split:' ' | sort %}
+
+<div class="home">
+  <h1 class="page-heading">Areas</h1>
+  <ul>
+    {% for key in sortedareas %}
+    {% assign area = site.data.properties[key] %}
+      <li>
+        <a href="{{ key | prepend: site.baseurl }}">
+          {{ area.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>

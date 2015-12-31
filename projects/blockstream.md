@@ -3,4 +3,5 @@ layout: projects
 title: Blockstream
 ---
 
-Core company
+The company with a lot of core developers!
+Is it a scam? Time will tell

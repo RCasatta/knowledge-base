@@ -6,7 +6,8 @@ module Jekyll
     def initialize(site, base)
       @site = site
       @base = base
-      @name = 'data.yml'
+
+      # p "initialize"
 
       dataPath = base + "/_data"
       relationsFile = File.open( dataPath + "/relations.yml" , 'w')
@@ -17,7 +18,7 @@ module Jekyll
       site.pages.each do |page|
         layout = page.data['layout']
         title = page.data['title']
-        if(layout == 'people' or layout == 'projects')
+        if( layout == 'people' or layout == 'projects' or layout == 'areas')
           values = {}
           id = page.url;
           values['title'] = title
@@ -39,7 +40,7 @@ module Jekyll
   end
 
   class CommonDataGenerator < Generator
-    safe true
+    safe false
 
     def generate(site)
       CommonData.new(site, site.source)
