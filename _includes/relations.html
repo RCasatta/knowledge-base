@@ -18,28 +18,28 @@
 {% endcapture %}
 
 {% assign relationsarr = relations | split:' '  %}
+<ul>
 {% for key in relationsarr %}
   {% assign relprop = site.data.relations[key] %}
   {% for relation in relprop.relations %}
-    <p>
+    <li>
     {% for cursub in relation.subject %}
       {% if cursub == page.url %}
-        <strong>{{ site.data.properties[cursub].title }}</strong>
+        {{ site.data.properties[cursub].title }}{% unless forloop.last %},{% endunless %}
       {% else %}
-        <a href="{{ site.baseurl }}{{ cursub }}">{{ site.data.properties[cursub].title }}</a>
+        <a href="{{ site.baseurl }}{{ cursub }}">{{ site.data.properties[cursub].title }}</a>{% unless forloop.last %},{% endunless %}
       {% endif %}
-      {% unless forloop.last %},{% endunless %}
     {% endfor %}
-    {{ relation.verb }}
+    <strong>{{ relation.verb }}</strong>
     {% for curobj in relation.object %}
       {% if curobj == page.url %}
-        <strong>{{ site.data.properties[curobj].title }}</strong>
+        {{ site.data.properties[curobj].title }}{% unless forloop.last %},{% endunless %}
       {% else %}
-        <a href="{{ site.baseurl }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>
+        <a href="{{ site.baseurl }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>{% unless forloop.last %},{% endunless %}
       {% endif %}
-      {% unless forloop.last %},{% endunless %}
     {% endfor %}
      @ <a href="{{ site.baseurl }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
-    </p>
+   </li>
   {% endfor %}
 {% endfor %}
+</ul>

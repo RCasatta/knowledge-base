@@ -22,3 +22,8 @@ github_username:  rcasatta
 # permalink: /:year/:month/:day/:title/
 
 permalink: pretty
+
+
+github:
+  repo: https://github.com/RCasatta/knowledge-base
+  editpost: https://github.com/RCasatta/knowledge-base/edit/gh-pages/
