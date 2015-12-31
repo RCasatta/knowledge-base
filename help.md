@@ -4,10 +4,10 @@ title: Help
 permalink: /help/
 ---
 
-In the knowledge base there are two kind of objects:
+In the knowledge base there are **two kind** of objects:
 
 ## Entities
-Entities are atemporal objects, they could have types:
+Entities are **atemporal** objects, they could have types:
 
 * People
 * Projects
@@ -24,13 +24,13 @@ title: Riccardo Casatta
 Free text with markdown
 {% endhighlight %}
 
-Since it is stored int the `people` folder the permalink is `/people/riccardo.casatta.md`. This is used also as identifier of the entity.
+Since it is stored int the `people` folder the permalink is `/people/riccardo.casatta.md`. This is used also as **identifier** of the entity.
 
 
 ## Facts
-Facts happens in a specific date, they contains special tags and relations between entities.
+Facts happens in a **specific date**, they contains **relations** between entities.
 
-They are files stored in the `_posts` directory with a naming conventions `:year-:month-:day-:title`. The initial date is the happening date of the fact.
+They are files stored in the `_posts` directory with a **naming convention** `:year-:month-:day-:title`. The initial date is the happening date of the fact. `:title` is in lowercase and use dash instead of spaces.
 
 There are also special properties that are optionally specificable in the front matter, especially the `relations` property.
 
@@ -45,5 +45,7 @@ relations:
      object: [ /company/blockstream ]
 ---
 
-
 {% endhighlight %}
+
+
+`subject` and `object` are arrays of identifiers of entitites.
