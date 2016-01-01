@@ -22,6 +22,9 @@ module Jekyll
           values = {}
           id = page.url;
           values['title'] = title
+          if(page.data['based'])
+            values['based'] = page.data['based']
+          end
           properties[id] = values
         end
       end

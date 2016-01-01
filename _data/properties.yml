@@ -13,7 +13,12 @@
   title: Italy
 /people/matt.corallo/:
   title: Matt Corallo
+/areas/milan/:
+  title: Milan
 /people/riccardo.casatta/:
   title: Riccardo Casatta
+  based:
+  - /areas/milan/
+  - /areas/italy/
 /people/vitalik.buterin/:
   title: Vitalik Buterin

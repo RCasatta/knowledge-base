@@ -1,10 +1,21 @@
 ---
 layout: default
 ---
+
+{% assign year = site.time | date: '%Y' %}
+{% assign person = page %}
 <article class="post">
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
+    {% if person.born %} <p>Age: <strong>{{ year | minus: person.born }}</strong></p>{% endif %}
+    {% if person.based %}
+      <p>Based:
+        {% for current in person.based %}
+          <a href="{{ site.baseurl }}{{ current }}">{{ site.data.properties[current].title }}</a>{% unless forloop.last %},{% endunless %}          
+        {% endfor %}
+      </p>
+    {% endif %}
   </header>
 
   <div class="post-content">
