@@ -16,7 +16,11 @@ permalink: /people/
 {% assign sortedpeople = people | split:' ' | sort %}
 
 <div class="home">
-  <h1 class="page-heading">People</h1>
+  <h1>People</h1>
+  <p>
+    <a href="{{ site.github.repo }}/new/gh-pages/people">New</a>
+    (<a href="{{ site.github.repo }}/edit/gh-pages/people/riccardo.casatta.md">example</a>)
+  </p>
   <ul>
     {% for key in sortedpeople %}
     {% assign person = site.data.properties[key] %}
