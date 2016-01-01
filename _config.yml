@@ -8,8 +8,7 @@
 # Site settings
 title: Knowledge base
 email: riccardo.casatta@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  This project aim crate a tool to easy create and mantain a collaborative knowledge base using a basic static site editable from github.
+description: 
 baseurl: "/knowledge-base" # the subpath of your site, e.g. /blog
 url: "http://riccardo.casatta.it" # the base hostname & protocol for your site
 twitter_username: rcasatta
