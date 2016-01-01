@@ -48,4 +48,4 @@ relations:
 {% endhighlight %}
 
 
-`subject` and `object` are arrays of identifiers of entitites.
+`subject` and `object` are arrays of identifiers of entitites. All of the entities referenced in the relations property are shown in the respective entities.
