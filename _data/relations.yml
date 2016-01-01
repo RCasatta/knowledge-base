@@ -29,3 +29,13 @@
     value: 700
   title: Investment in Ethereum
   date: 2014-01-25 00:00:00.000000000 +01:00
+/2016/01/01/vitalik-invest-on-his-own/:
+  relations:
+  - subject:
+    - /people/vitalik.buterin/
+    verb: invest
+    object:
+    - /projects/ethereum/
+    value: 10700
+  title: Vitalik invest in his own project
+  date: 2016-01-01 00:00:00.000000000 +01:00

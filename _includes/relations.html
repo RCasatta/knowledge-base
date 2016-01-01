@@ -21,7 +21,7 @@
   {% endfor %}
 {% endcapture %}
 
-{% assign relationsarr = relations | split:' '  %}
+{% assign relationsarr = relations | split:' ' | reverse  %}
 <ul>
 {% for key in relationsarr %}
   {% assign relprop = site.data.relations[key] %}
