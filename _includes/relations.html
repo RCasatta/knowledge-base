@@ -48,6 +48,10 @@
       {% else %}
         <a href="{{ site.baseurl }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
       {% endif %}
+
+      {% if relation.value %}
+        <strong>${{ relation.value }}</strong>
+      {% endif %}
    </li>
   {% endfor %}
 {% endfor %}
