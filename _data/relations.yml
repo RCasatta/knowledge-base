@@ -2,40 +2,40 @@
 /1997/01/25/new-antispam-countermeasure-invented/:
   relations:
   - subject:
-    - /people/adam.back/
+    - /people/adamo.indietro/
     verb: invent
     object:
-    - /projects/hashcash/
+    - /projects/tritasoldi/
   title: New antispam countermeasure invented
   date: 1997-01-25 00:00:00.000000000 +01:00
-/2013/09/25/blockstream-founded/:
+/2013/09/25/flusso-di-blocchi-founded/:
   relations:
   - subject:
-    - /people/adam.back/
-    - /people/matt.corallo/
-    - /people/gregory.maxwell/
+    - /people/adamo.indietro/
+    - /people/matteo.corallo/
+    - /people/gregorio.massimobene/
     verb: found
     object:
-    - /projects/blockstream/
+    - /projects/flusso.di.blocchi/
   title: Blockstream founded
   date: 2013-09-25 00:00:00.000000000 +02:00
-/2014/01/25/investment-in-ethereum/:
+/2014/01/25/investment-in-eterea/:
   relations:
   - subject:
     - /people/riccardo.casatta/
     verb: invest
     object:
-    - /projects/ethereum/
+    - /projects/eterea/
     value: 700
-  title: Investment in Ethereum
+  title: Investment in Eterea
   date: 2014-01-25 00:00:00.000000000 +01:00
-/2016/01/01/vitalik-invest-on-his-own/:
+/2016/01/01/vitale-invest-on-his-own/:
   relations:
   - subject:
-    - /people/vitalik.buterin/
+    - /people/vitale.burro/
     verb: invest
     object:
-    - /projects/ethereum/
+    - /projects/eterea/
     value: 10700
-  title: Vitalik invest in his own project
+  title: Vitale invest in his own project
   date: 2016-01-01 00:00:00.000000000 +01:00

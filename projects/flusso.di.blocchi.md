@@ -1,6 +1,6 @@
 ---
 layout: projects
-title: Blockstream
+title: Flusso di Blocchi
 ---
 
 The company with a lot of core developers!

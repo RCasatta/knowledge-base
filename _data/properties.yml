@@ -1,18 +1,16 @@
 ---
-/people/adam.back/:
-  title: Adam Back
-/projects/blockstream/:
-  title: Blockstream
-/projects/ethereum/:
-  title: Ethereum
-/people/gregory.maxwell/:
-  title: Gregory Maxwell
-/projects/hashcash/:
-  title: Hashcash
+/people/adamo.indietro/:
+  title: Adamo Indietro
+/projects/eterea/:
+  title: Eterea
+/projects/flusso.di.blocchi/:
+  title: Flusso di Blocchi
+/people/gregorio.massimobene/:
+  title: Gregorio Massimobene
 /areas/italy/:
   title: Italy
-/people/matt.corallo/:
-  title: Matt Corallo
+/people/matteo.corallo/:
+  title: Matteo Corallo
 /areas/milan/:
   title: Milan
 /people/riccardo.casatta/:
@@ -20,5 +18,7 @@
   based:
   - /areas/milan/
   - /areas/italy/
-/people/vitalik.buterin/:
-  title: Vitalik Buterin
+/projects/tritasoldi/:
+  title: Tritasoldi
+/people/vitale.burro/:
+  title: Vitale Burro

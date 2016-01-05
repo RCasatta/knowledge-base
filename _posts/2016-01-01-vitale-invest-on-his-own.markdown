@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Vitalik invest in his own project"
+title:  "Vitale invest in his own project"
 author: /people/riccardo.casatta/
 relations:
-   - subject: [ /people/vitalik.buterin/  ]
+   - subject: [ /people/vitale.burro/  ]
      verb: invest
-     object: [ /projects/ethereum/ ]
+     object: [ /projects/eterea/ ]
      value: 10700
 ---
 

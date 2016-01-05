@@ -1,7 +1,6 @@
 ---
 layout: people
-title: Adam Back
-born: 1970
+title: Matteo Corallo
 ---
 
 Free text with markdown

@@ -37,12 +37,12 @@ There are also special properties that are optionally specificable in the front 
 {% highlight html %}
 ---
 layout: post
-title:  "New company blockstream founded"
+title:  "New company 'Flusso di Blocchi' founded"
 date:   2013-09-25 16:31:32 +0100
 relations:
-   - subject: [ /people/adam.back, /people/matt.corallo, /people/gregory.maxwell  ]
+   - subject: [ /people/adamo.indietro/, /people/matteo.corallo/, /people/gregorio.massimobene/  ]
      verb: found
-     object: [ /company/blockstream ]
+     object: [ /company/flusso.di.blocchi/ ]
 ---
 
 {% endhighlight %}

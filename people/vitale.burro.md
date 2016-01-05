@@ -1,6 +1,6 @@
 ---
 layout: people
-title: Vitalik Buterin
+title: Vitale Burro
 ---
 
 Young russian guy

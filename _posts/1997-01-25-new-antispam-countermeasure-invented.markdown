@@ -3,9 +3,9 @@ layout: post
 title:  "New antispam countermeasure invented"
 author: /people/riccardo.casatta/
 relations:
-   - subject: [ /people/adam.back/  ]
+   - subject: [ /people/adamo.indietro/  ]
      verb: invent
-     object: [ /projects/hashcash/ ]
+     object: [ /projects/tritasoldi/ ]
 ---
 
-Adam Back invented hashcash
+Adamo Indietro invented tritasoldi

@@ -1,6 +1,6 @@
 ---
 layout: people
-title: Matt Corallo
+title: Gregorio Massimobene
 ---
 
 Free text with markdown

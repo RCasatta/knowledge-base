@@ -1,6 +1,7 @@
 ---
 layout: people
-title: Gregory Maxwell
+title: Adamo Indietro
+born: 1970
 ---
 
 Free text with markdown
