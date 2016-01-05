@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blockstream founded"
+title:  "Flusso di Blocchi founded"
 relations:
    - subject: [ /people/adamo.indietro/, /people/matteo.corallo/, /people/gregorio.massimobene/  ]
      verb: found
@@ -8,3 +8,4 @@ relations:
 ---
 
 Company founded!
+ 
