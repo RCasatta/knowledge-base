@@ -22,7 +22,8 @@ layout: default
     {% if person.based %}
       <p>{{ site.data.translations[language]['Based'] }}:
         {% for current in person.based %}
-          <a href="{{ site.baseurl }}{{ current }}">{{ site.data.properties[current].title }}</a>{% unless forloop.last %},{% endunless %}
+          {% assign cururllang = current | prepend: urllang %}
+          <a href="{{ site.baseurl }}{{ urllang }}{{ current }}">{{ myprop[cururllang].title }}</a>{% unless forloop.last %},{% endunless %}
         {% endfor %}
       </p>
     {% endif %}

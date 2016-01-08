@@ -1,6 +1,18 @@
 ---
 layout: default
 ---
+
+{% assign parts = page.url | split: '/'  %}
+{% assign language = parts[1] %}
+{% if language == 'it' %}
+  {% assign urllang = "/it" %}
+  {% assign myprop = site.data.it_properties %}
+{% else %}
+  {% assign myprop = site.data.properties %}
+  {% assign language = 'en' %}
+{% endif %}
+{% assign urlnolang = page.url | replace: '/it/' , '/'  %}
+
 <article class="post">
 
   <header class="post-header">
@@ -12,13 +24,12 @@ layout: default
   </div>
 
   {% include relations.html %}
-
-  <p>People based in {{ page.title }}:</p>
+  <p>{{ site.data.translations[language]['basedin'] }} {{ page.title }}:</p>
   <ul>
   {% for prop in site.data.properties %}
     {% for current in prop[1].based %}
-      {% if current == page.url %}
-        <li><a href="{{ site.baseurl }}{{ prop[0] }}">{{ prop[1].title }}</li>
+      {% if current == urlnolang %}
+        <li><a href="{{ site.baseurl }}{{ urllang }}{{ prop[0] }}">{{ prop[1].title }}</li>
       {% endif %}
     {% endfor %}
   {% endfor %}
