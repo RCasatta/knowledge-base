@@ -29,8 +29,19 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-        <p><a href="{{ site.github.editpost }}{{ page.path }}">Edit</a> this page</p>
+        <ul class="contact-list">
+          <li>
+            {% assign language = page.url | slice: 1, 2 %}
+            {% if language == 'it' %}
+              <a href="{{ page.url | slice: 3,100 | prepend: site.baseurl }}">en</a> |
+              <strong>it</strong>
+            {% else %}
+              <strong>en</strong> |
+              <a href="{{ page.url | prepend: '/it' | prepend: site.baseurl }}">it</a>
+            {% endif %}
+          </li>
+          <li><a href="{{ site.github.editpost }}{{ page.path }}">Edit</a> this page</li>
+        </ul>
       </div>
     </div>
 

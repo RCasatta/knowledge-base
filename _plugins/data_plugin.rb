@@ -18,6 +18,7 @@ module Jekyll
       site.pages.each do |page|
         layout = page.data['layout']
         title = page.data['title']
+        fullpath = base + "/" + page.path
         if( layout == 'people' or layout == 'projects' or layout == 'areas')
           values = {}
           id = page.url;
@@ -26,13 +27,35 @@ module Jekyll
             values['based'] = page.data['based']
           end
 
-          if(page.data['language'] == 'it')
+          if( fullpath.include? '/it/')  #only it page
+            p page.path + " INCLUDE /it/"
             it_properties[page.url] = values;
           else
-            properties[page.url] = values;
-          end
+            p page.path + " do not include /it/"
 
-          # p page.path + " " + page.url
+            properties[page.url] = values;
+
+            itpath = base + '/it/' + page.path
+            itexist = File.exists?(itpath);
+            p itpath + " exist? " + itexist.to_s
+
+            if not itexist
+              itfile = File.open( itpath , 'w')
+              itvalues = {}
+              itvalues['layout'] = layout
+              itvalues['permalink'] = '/it' + page.url;
+              itvalues['language'] = 'it'
+              itvalues['title'] = title
+              itfile.write(itvalues.to_yaml)
+              itfile.write("---")
+              itfile.write("\n")
+              itfile.write("\n")
+              itfile.write(page.content)
+              itfile.close
+              # google translate https://gist.github.com/kirs/1462329
+            end
+          end
+          p page.path + " " + page.url
         end
 
       end
@@ -64,6 +87,7 @@ module Jekyll
             itfile.write("\n")
             itfile.write("\n")
             itfile.write(post.content)
+            itfile.close
 
           end
         end

@@ -1,0 +1,37 @@
+---
+layout: default
+title: Projects
+permalink: /it/projects/
+---
+
+{% capture projects %}
+  {% for current in site.data.properties %}
+    {% assign array = current[0] | split:'/' %}
+      {% if array[1] == 'projects' %}
+        {{ current[0] }}
+      {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign sortedprojects = projects | split:' ' | sort %}
+
+<div class="home">
+
+  <h1>Projects</h1>
+  <p>
+    <a href="{{ site.github.repo }}/new/gh-pages/projects">New</a>
+    (<a href="{{ site.github.repo }}/edit/gh-pages/projects/blockstream.md">example</a>)
+  </p>
+
+  <ul>
+    {% for key in sortedprojects %}
+    {% assign project = site.data.properties[key] %}
+      <li>
+        <a href="{{ key | prepend: site.baseurl }}">
+          {{ project.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>

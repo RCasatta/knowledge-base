@@ -1,0 +1,37 @@
+---
+layout: default
+title: Areas
+permalink: /it/areas/
+---
+
+{% capture areas %}
+  {% for current in site.data.properties %}
+    {% assign array = current[0] | split:'/' %}
+      {% if array[1] == 'areas' %}
+        {{ current[0] }}
+      {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign sortedareas = areas | split:' ' | sort %}
+
+<div class="home">
+  <h1>Areas</h1>
+
+  <p>
+    <a href="{{ site.github.repo }}/new/gh-pages/areas">New</a>
+    (<a href="{{ site.github.repo }}/edit/gh-pages/areas/italy.md">example</a>)
+  </p>
+
+  <ul>
+    {% for key in sortedareas %}
+    {% assign area = site.data.properties[key] %}
+      <li>
+        <a href="{{ key | prepend: site.baseurl }}">
+          {{ area.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
