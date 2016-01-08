@@ -7,7 +7,7 @@ permalink: /projects/
 {% capture projects %}
   {% for current in site.data.properties %}
     {% assign array = current[0] | split:'/' %}
-      {% if array[1] == 'projects' %}
+      {% if array[1] == 'projects' and current[0] != '/projects/' %}
         {{ current[0] }}
       {% endif %}
   {% endfor %}
@@ -19,8 +19,8 @@ permalink: /projects/
 
   <h1>{{ page.title }}</h1>
   <p>
-    <a href="{{ site.github.repo }}/new/gh-pages/it/projects">Nuovo</a>
-    (<a href="{{ site.github.repo }}/edit/gh-pages/it/projects/blockstream.md">esempio</a>)
+    <a href="{{ site.github.repo }}/new/gh-pages/projects">New</a>
+    (<a href="{{ site.github.repo }}/edit/gh-pages/projects/blockstream.md">example</a>)
   </p>
 
   <ul>

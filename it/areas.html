@@ -5,9 +5,9 @@ permalink: /it/areas/
 ---
 
 {% capture areas %}
-  {% for current in site.data.properties %}
+  {% for current in site.data.it_properties %}
     {% assign array = current[0] | split:'/' %}
-      {% if array[1] == 'areas' %}
+      {% if array[2] == 'areas' and current[0] != '/it/areas/' %}
         {{ current[0] }}
       {% endif %}
   {% endfor %}
@@ -25,7 +25,7 @@ permalink: /it/areas/
 
   <ul>
     {% for key in sortedareas %}
-    {% assign area = site.data.properties[key] %}
+    {% assign area = site.data.it_properties[key] %}
       <li>
         <a href="{{ key | prepend: site.baseurl }}">
           {{ area.title }}

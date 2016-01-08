@@ -7,7 +7,7 @@ permalink: /people/
 {% capture people %}
   {% for current in site.data.properties %}
     {% assign array = current[0] | split:'/' %}
-      {% if array[1] == 'people' %}
+      {% if array[1] == 'people' and current[0] != '/people/' %}
         {{ current[0] }}
       {% endif %}
   {% endfor %}

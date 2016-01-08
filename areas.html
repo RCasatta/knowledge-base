@@ -7,7 +7,7 @@ permalink: /areas/
 {% capture areas %}
   {% for current in site.data.properties %}
     {% assign array = current[0] | split:'/' %}
-      {% if array[1] == 'areas' %}
+      {% if array[1] == 'areas' and current[0] != '/areas/' %}
         {{ current[0] }}
       {% endif %}
   {% endfor %}

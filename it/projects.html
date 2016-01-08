@@ -5,9 +5,9 @@ permalink: /it/projects/
 ---
 
 {% capture projects %}
-  {% for current in site.data.properties %}
+  {% for current in site.data.it_properties %}
     {% assign array = current[0] | split:'/' %}
-      {% if array[1] == 'projects' %}
+      {% if array[2] == 'projects' and current[0] != '/it/projects/' %}
         {{ current[0] }}
       {% endif %}
   {% endfor %}
@@ -25,7 +25,7 @@ permalink: /it/projects/
 
   <ul>
     {% for key in sortedprojects %}
-    {% assign project = site.data.properties[key] %}
+    {% assign project = site.data.it_properties[key] %}
       <li>
         <a href="{{ key | prepend: site.baseurl }}">
           {{ project.title }}
