@@ -1,6 +1,7 @@
 ---
 /people/adamo.indietro/:
   title: Adamo Indietro
+  born: 1970
 /areas/:
   title: Areas
 /projects/eterea/:
@@ -30,6 +31,7 @@
   based:
   - /areas/milan/
   - /areas/italy/
+  born: 1983
 /search/:
   title: Search
 /projects/tritasoldi/:

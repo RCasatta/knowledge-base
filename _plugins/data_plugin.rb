@@ -26,6 +26,9 @@ module Jekyll
           if(page.data['based'])
             values['based'] = page.data['based']
           end
+          if(page.data['born'])
+            values['born'] = page.data['born']
+          end
 
           if( fullpath.include? '/it/')  #only it page
             p page.path + " INCLUDE /it/"

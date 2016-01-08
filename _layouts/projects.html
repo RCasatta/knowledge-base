@@ -1,6 +1,19 @@
 ---
 layout: default
 ---
+
+{% assign urlnolang = page.url | replace: '/it/' , '/'  %}
+{% assign parts = page.url | split: '/'  %}
+{% assign language = parts[1] %}
+{% if language == 'it' %}
+  {% assign urllang = "/it" %}
+  {% assign myprop = site.data.it_properties %}
+{% else %}
+  {% assign myprop = site.data.properties %}
+  {% assign language = 'en' %}
+{% endif %}
+{% assign urlnolang = page.url | replace: '/it/' , '/'  %}
+
 <article class="post">
 
   <header class="post-header">
@@ -10,7 +23,7 @@ layout: default
       {% for relation in current[1].relations %}
         {% if relation.verb == 'invest' and relation.value %}
           {% for object in relation.object %}
-            {% if object == page.url %}
+            {% if object == urlnolang %}
               {% assign total = total | plus: relation.value %}
             {% endif %}
           {% endfor %}
@@ -18,7 +31,7 @@ layout: default
       {% endfor %}
     {% endfor %}
     {% if total > 0 %}
-    <p>Investment: <strong>${{ total }}</strong></p>
+    <p>{{site.data.translations[language]['Investment']}}: <strong>${{ total }}</strong></p>
     {% endif %}
 
   </header>

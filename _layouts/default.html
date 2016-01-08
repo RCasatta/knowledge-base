@@ -1,3 +1,15 @@
+{% assign parts = page.url | split: '/'  %}
+{% assign language = parts[1] %}
+{% if language == 'it' %}
+  {% assign urllang = "/it" %}
+  {% assign myprop = site.data.it_properties %}
+{% else %}
+  {% assign myprop = site.data.properties %}
+  {% assign language = 'en' %}
+{% endif %}
+{% assign urlnolang = page.url | replace: '/it/' , '/'  %}
+
+
 <!DOCTYPE html>
 <html>
 

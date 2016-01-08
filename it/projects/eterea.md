@@ -5,4 +5,4 @@ language: it
 title: Eterea
 ---
 
-Developing **Eterea** protocol, blockchain plus a turing complete scripting engine
+Sviluppano il protocollo **Eterea**, blockchain con uno scripting enginer turing completo

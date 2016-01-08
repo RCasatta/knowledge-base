@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Investment in Eterea"
-author: /people/riccardo.casatta/
 relations:
    - subject: [ /people/riccardo.casatta/  ]
      verb: invest

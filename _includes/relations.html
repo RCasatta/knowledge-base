@@ -1,25 +1,33 @@
-
+{% assign urlnolang = page.url | replace: '/it/' , '/'  %}
+{% assign parts = page.url | split: '/'  %}
+{% assign language = parts[1] %}
+{% if language == 'it' %}
+  {% assign urllang = "/it" %}
+{% else %}
+  {% assign language = 'en' %}
+{% endif %}
 
 {% capture relations %}
   {% for current in site.data.relations %}
     {% assign relkey = current[0] ) %}
-    {% if relkey == page.url %}
+    {% if relkey == urlnolang %}
       {{ relkey }}
     {% endif %}
     {% for relation in current[1].relations %}
       {% for cursub in relation.subject %}
-        {% if cursub == page.url %}
+        {% if cursub == urlnolang %}
           {{ relkey }}
         {% endif %}
       {% endfor %}
       {% for curobj in relation.object %}
-        {% if curobj == page.url %}
+        {% if curobj == urlnolang %}
           {{ relkey }}
         {% endif %}
       {% endfor %}
     {% endfor %}
   {% endfor %}
 {% endcapture %}
+
 
 {% assign relationsarr = relations | split:' ' | reverse  %}
 <ul>
@@ -28,25 +36,27 @@
   {% for relation in relprop.relations %}
     <li>
     {% for cursub in relation.subject %}
-      {% if cursub == page.url %}
+      {% if cursub == urlnolang %}
         {{ site.data.properties[cursub].title }}{% unless forloop.last %},{% endunless %}
       {% else %}
-        <a href="{{ site.baseurl }}{{ cursub }}">{{ site.data.properties[cursub].title }}</a>{% unless forloop.last %},{% endunless %}
+        <a href="{{ site.baseurl }}{{ urllang }}{{ cursub }}">{{ site.data.properties[cursub].title }}</a>{% unless forloop.last %},{% endunless %}
       {% endif %}
     {% endfor %}
-    <strong>{{ relation.verb }}</strong>
+    <strong>
+        {{ site.data.translations[language][relation.verb] }}
+    </strong>
     {% for curobj in relation.object %}
-      {% if curobj == page.url %}
+      {% if curobj == urlnolang %}
         {{ site.data.properties[curobj].title }}{% unless forloop.last %},{% endunless %}
       {% else %}
-        <a href="{{ site.baseurl }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>{% unless forloop.last %},{% endunless %}
+        <a href="{{ site.baseurl }}{{ urllang }}{{ curobj }}">{{ site.data.properties[curobj].title }}</a>{% unless forloop.last %},{% endunless %}
       {% endif %}
     {% endfor %}
      @
-      {% if key == page.url %}
+      {% if key == urlnolang %}
         {{ relprop.date | date: "%b %-d, %Y" }}
       {% else %}
-        <a href="{{ site.baseurl }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
+        <a href="{{ site.baseurl }}{{ urllang }}{{ key }}">{{ relprop.date | date: "%b %-d, %Y" }}</a>
       {% endif %}
 
       {% if relation.value %}

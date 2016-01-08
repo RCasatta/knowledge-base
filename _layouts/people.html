@@ -1,18 +1,28 @@
 ---
 layout: default
 ---
+{% assign parts = page.url | split: '/'  %}
+{% assign language = parts[1] %}
+{% if language == 'it' %}
+  {% assign urllang = "/it" %}
+  {% assign myprop = site.data.it_properties %}
+{% else %}
+  {% assign myprop = site.data.properties %}
+  {% assign language = 'en' %}
+{% endif %}
+{% assign urlnolang = page.url | replace: '/it/' , '/'  %}
 
 {% assign year = site.time | date: '%Y' %}
-{% assign person = page %}
+{% assign person = site.data.properties[urlnolang] %}
 <article class="post">
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    {% if person.born %} <p>Age: <strong>{{ year | minus: person.born }}</strong></p>{% endif %}
+    {% if person.born %} <p>{{ site.data.translations[language]['Age'] }}: <strong>{{ year | minus: person.born }}</strong></p>{% endif %}
     {% if person.based %}
-      <p>Based:
+      <p>{{ site.data.translations[language]['Based'] }}:
         {% for current in person.based %}
-          <a href="{{ site.baseurl }}{{ current }}">{{ site.data.properties[current].title }}</a>{% unless forloop.last %},{% endunless %}          
+          <a href="{{ site.baseurl }}{{ current }}">{{ site.data.properties[current].title }}</a>{% unless forloop.last %},{% endunless %}
         {% endfor %}
       </p>
     {% endif %}
