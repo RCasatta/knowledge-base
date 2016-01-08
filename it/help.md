@@ -4,7 +4,7 @@ title: Help
 permalink: /it/help/
 ---
 
-In the knowledge base there are **two kind** of objects:
+Nella base di conoscenza ci sono **due tipi** di oggetti:
 
 ## Entities
 Entities are **atemporal** objects, they could have types:
