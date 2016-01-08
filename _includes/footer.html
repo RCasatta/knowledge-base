@@ -30,11 +30,11 @@
 
       <div class="footer-col footer-col-3">
         <ul class="contact-list">
-          <li>{{ page.url }}</li>
+          {% assign parts = page.url | split: '/'  %}
+          {% assign language = parts[1] %}
           <li>
-            {% assign language = page.url | slice: 1, 2 %}
             {% if language == 'it' %}
-              <a href="{{ page.url | slice: 3,100 | prepend: site.baseurl }}">en</a> |
+              <a href="{{ page.url | replace: '/it/','/' | prepend: site.baseurl }}">en</a> |
               <strong>it</strong>
             {% else %}
               <strong>en</strong> |
