@@ -31,16 +31,16 @@ module Jekyll
           end
 
           if( fullpath.include? '/it/')  #only it page
-            p page.path + " INCLUDE /it/"
+            # p page.path + " INCLUDE /it/"
             it_properties[page.url] = values;
           else
-            p page.path + " do not include /it/"
+            # p page.path + " do not include /it/"
 
             properties[page.url] = values;
 
             itpath = base + '/it/' + page.path
             itexist = File.exists?(itpath);
-            p itpath + " exist? " + itexist.to_s
+            # p itpath + " exist? " + itexist.to_s
 
             if not itexist
               itfile = File.open( itpath , 'w')
@@ -58,7 +58,7 @@ module Jekyll
               # google translate https://gist.github.com/kirs/1462329
             end
           end
-          p page.path + " " + page.url
+          # p page.path + " " + page.url
         end
 
       end
@@ -76,7 +76,7 @@ module Jekyll
             itpath = post.path.sub! '_posts/1', '_posts/it/1'
           end
           itexist = File.exist?(itpath);
-          p itpath + " exist? " + itexist.to_s
+          # p itpath + " exist? " + itexist.to_s
           if not itexist
             itfile = File.open( itpath , 'w')
             itvalues = {}
@@ -97,14 +97,53 @@ module Jekyll
         # p post.path + " " + post.url
       end
 
-      relationsFile  = File.open( dataPath + "/relations.yml" , 'w')
-      relationsFile.write( relations.to_yaml );
+      sha256 = Digest::SHA256.new
 
-      propertiesFile = File.open( dataPath + "/properties.yml" , 'w')
-      propertiesFile.write( properties.to_yaml );
-      itPropertiesFile = File.open( dataPath + "/it_properties.yml" , 'w')
-      itPropertiesFile.write( it_properties.to_yaml );
+      #Consider create a function idiot, you are repeating same code 3 times
+      relationsPath = dataPath + "/relations.yml"
+      relationsData = relations.to_yaml
+      dataSha256 = sha256.hexdigest relationsData
+      file = File.open(relationsPath, "rb")
+      contents = file.read
+      file.close
+      contentsSha256 = sha256.hexdigest contents
 
+      if(contentsSha256 != dataSha256 )
+        p "relations differ, writing..."
+        relationsFile  = File.open( relationsPath , 'w')
+        relationsFile.write( relationsData )
+        relationsFile.close
+      end
+
+      propertiesPath = dataPath + "/properties.yml"
+      propertiesData = properties.to_yaml
+      pDataSha256 = sha256.hexdigest propertiesData
+      file = File.open(propertiesPath, "rb")
+      contents = file.read
+      file.close
+      pContSha256 = sha256.hexdigest contents
+
+      if(pDataSha256 != pContSha256)
+        p "properties differ, writing..."
+        propertiesFile = File.open( propertiesPath , 'w')
+        propertiesFile.write( propertiesData )
+        propertiesFile.close
+      end
+
+
+      itPropertiesPath = dataPath + "/it_properties.yml"
+      itPropertiesData = it_properties.to_yaml
+      itPDataSha256 = sha256.hexdigest itPropertiesData
+      file = File.open(itPropertiesPath, "rb")
+      contents = file.read
+      file.close
+      itPContSha256 = sha256.hexdigest contents
+      if(itPDataSha256 != itPContSha256)
+        p "it properties differ, writing..."
+        itPropertiesFile = File.open( itPropertiesPath , 'w')
+        itPropertiesFile.write( itPropertiesData )
+        itPropertiesFile.close
+      end
 
     end
   end
