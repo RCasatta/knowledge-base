@@ -4,7 +4,7 @@ layout: default
 
 # Benvenuti!
 
-Visita [aiuto]({{ site.baseurl }}/it/help) per informazioni su questa base di conoscenza collaborative, oppure controlla i [fatti]({{ site.baseurl }}/it/facts).
+Visita [aiuto]({{ site.baseurl }}/it/help) per informazioni su questa base di conoscenza collaborativa, oppure controlla i [fatti]({{ site.baseurl }}/it/facts).
 
 Puoi anche vedere le entità, come i [progetti]({{ site.baseurl }}/it/projects), [persone]({{ site.baseurl }}/it/people) o le [aree]({{ site.baseurl }}/it/areas).
 
