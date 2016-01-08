@@ -30,6 +30,7 @@
 
       <div class="footer-col footer-col-3">
         <ul class="contact-list">
+          <li>{{ page.url }}</li>
           <li>
             {% assign language = page.url | slice: 1, 2 %}
             {% if language == 'it' %}
