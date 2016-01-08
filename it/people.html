@@ -1,6 +1,6 @@
 ---
 layout: default
-title: People
+title: Persone
 permalink: /it/people/
 ---
 
@@ -16,10 +16,10 @@ permalink: /it/people/
 {% assign sortedpeople = people | split:' ' | sort %}
 
 <div class="home">
-  <h1>People</h1>
+  <h1>{{ page.title }}</h1>
   <p>
-    <a href="{{ site.github.repo }}/new/gh-pages/people">New</a>
-    (<a href="{{ site.github.repo }}/edit/gh-pages/people/riccardo.casatta.md">example</a>)
+    <a href="{{ site.github.repo }}/new/gh-pages/it/people">Nuova</a>
+    (<a href="{{ site.github.repo }}/edit/gh-pages/it/people/riccardo.casatta.md">esempio</a>)
   </p>
   <ul>
     {% for key in sortedpeople %}

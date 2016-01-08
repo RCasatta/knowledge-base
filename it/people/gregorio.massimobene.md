@@ -5,4 +5,4 @@ language: it
 title: Gregorio Massimobene
 ---
 
-Free text with markdown
+Testo libero con sintassi markdown

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Help
+title: Aiuto
 permalink: /it/help/
 ---
 

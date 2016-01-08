@@ -2,7 +2,7 @@
 layout: areas
 permalink: /it/areas/milan/
 language: it
-title: Milan
+title: Milano
 ---
 
-Milan is the economic capital of Italy
+Milano è la capitale economica italiana.

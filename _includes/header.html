@@ -2,7 +2,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <a class="site-title" href="{{ site.baseurl }}{{ urllang }}/">{{ site.title }}</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -15,12 +15,12 @@
 
       <div class="trigger">
 
-        <a class="page-link" href="{{ '/help' | prepend: site.baseurl }}">Help</a>
-        <a class="page-link" href="{{ '/facts' | prepend: site.baseurl }}">Facts</a>
-        <a class="page-link" href="{{ '/projects' | prepend: site.baseurl }}">Projects</a>
-        <a class="page-link" href="{{ '/people' | prepend: site.baseurl }}">People</a>
-        <a class="page-link" href="{{ '/areas' | prepend: site.baseurl }}">Areas</a>
-        <a class="page-link" href="{{ '/search' | prepend: site.baseurl }}">Search</a>
+        <a class="page-link" href="{{ '/help' | prepend: urllang | prepend: site.baseurl }}">{% assign key = urllang | append: '/help/' %}{{ myprop[key].title }}</a>
+        <a class="page-link" href="{{ '/facts' | prepend: urllang | prepend: site.baseurl }}">{% assign key = urllang | append: '/facts/' %}{{ myprop[key].title }}</a>
+        <a class="page-link" href="{{ '/projects' | prepend: urllang | prepend: site.baseurl }}">{% assign key = urllang | append: '/projects/' %}{{ myprop[key].title }}</a>
+        <a class="page-link" href="{{ '/people' | prepend: urllang | prepend: site.baseurl }}">{% assign key = urllang | append: '/people/' %}{{ myprop[key].title }}</a>
+        <a class="page-link" href="{{ '/areas' | prepend: urllang | prepend: site.baseurl }}">{% assign key = urllang | append: '/areas/' %}{{ myprop[key].title }}</a>
+        <a class="page-link" href="{{ '/search' | prepend: urllang | prepend: site.baseurl }}">{% assign key = urllang | append: '/search/' %}{{ myprop[key].title }}</a>
 
       </div>
     </nav>

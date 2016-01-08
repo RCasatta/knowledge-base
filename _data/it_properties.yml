@@ -1,20 +1,34 @@
 ---
 /it/people/adamo.indietro/:
   title: Adamo Indietro
+/it/areas/:
+  title: Aree
 /it/projects/eterea/:
   title: Eterea
+/it/facts/:
+  title: Fatti
 /it/projects/flusso.di.blocchi/:
   title: Flusso di Blocchi
 /it/people/gregorio.massimobene/:
   title: Gregorio Massimobene
+/it/help/:
+  title: Aiuto
+/it/:
+  title: 
 /it/areas/italy/:
-  title: Italy
+  title: Italia
 /it/people/matteo.corallo/:
   title: Matteo Corallo
 /it/areas/milan/:
-  title: Milan
+  title: Milano
+/it/people/:
+  title: Persone
+/it/projects/:
+  title: Progetti
 /it/people/riccardo.casatta/:
   title: Riccardo Casatta
+/it/search/:
+  title: Cerca
 /it/projects/tritasoldi/:
   title: Tritasoldi
 /it/people/vitale.burro/:

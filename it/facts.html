@@ -1,18 +1,20 @@
 ---
 layout: default
+title: Fatti
 ---
 
 <div class="home">
 
-  <h1>Facts</h1>
+  <h1>{{ page.title }}</h1>
 
   <h2>
-    <a href="{{ site.github.repo }}/new/gh-pages/_posts">New</a>
-    <small>(<a href="{{ site.github.repo }}/edit/gh-pages/_posts/2014-01-25-investment-in-ethereum.markdown">example</a>)</small>
+    <a href="{{ site.github.repo }}/new/gh-pages/_posts/it/">Nuovo</a>
+    <small>(<a href="{{ site.github.repo }}/edit/gh-pages/_posts/it/2014-01-25-investment-in-ethereum.markdown">esempio</a>)</small>
   </h2>
 
   <ul class="post-list">
     {% for post in site.posts %}
+      {% if post.url contains '/it/' %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
@@ -20,8 +22,8 @@ layout: default
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
       </li>
+      {% endif %}
     {% endfor %}
   </ul>
 
 </div>
- 

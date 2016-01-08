@@ -2,8 +2,7 @@
 layout: areas
 permalink: /it/areas/italy/
 language: it
-title: Italy
+title: Italia
 ---
 
-Italy is a country in the south of Europe
- 
+L'Italia è una nazione nel sud dell'Europa

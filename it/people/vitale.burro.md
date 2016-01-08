@@ -5,4 +5,4 @@ language: it
 title: Vitale Burro
 ---
 
-Young russian guy
+Giovane genio russo

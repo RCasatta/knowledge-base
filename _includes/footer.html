@@ -30,8 +30,7 @@
 
       <div class="footer-col footer-col-3">
         <ul class="contact-list">
-          {% assign parts = page.url | split: '/'  %}
-          {% assign language = parts[1] %}
+
           <li>
             {% if language == 'it' %}
               <a href="{{ page.url | replace: '/it/','/' | prepend: site.baseurl }}">en</a> |
@@ -41,7 +40,13 @@
               <a href="{{ page.url | prepend: '/it' | prepend: site.baseurl }}">it</a>
             {% endif %}
           </li>
-          <li><a href="{{ site.github.editpost }}{{ page.path }}">Edit</a> this page</li>
+            {% if language == 'it' %}
+              <li><a href="{{ site.github.editpost }}{{ page.path }}">Modifica</a> questa pagina</li>
+            {% else %}
+              <li><a href="{{ site.github.editpost }}{{ page.path }}">Edit</a> this page</li>
+            {% endif %}
+
+
         </ul>
       </div>
     </div>

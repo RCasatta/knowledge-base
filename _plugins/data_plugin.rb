@@ -19,7 +19,7 @@ module Jekyll
         layout = page.data['layout']
         title = page.data['title']
         fullpath = base + "/" + page.path
-        if( layout == 'people' or layout == 'projects' or layout == 'areas')
+        if( layout == 'people' or layout == 'projects' or layout == 'areas' or layout == 'default' or layout == 'page')
           values = {}
           id = page.url;
           values['title'] = title
