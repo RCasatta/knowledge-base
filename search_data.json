@@ -3,24 +3,33 @@ layout: null
 ---
 {% assign count = 0 %}
 {
-  {% for post in site.posts %}{% assign count = count | plus:1 %}
-    "{{ count }}": {
-      "t": "{{ post.title | xml_escape }}",
-      "u": "{{ post.url | xml_escape }}",
-      "k": "fact",
-      "d": "{{ post.date | date: "%B %-d, %Y" }}",
-      {% if post.author %}"a": "{{ site.data.properties[post.author].title | xml_escape }}",{% endif %}
-      "c": "{{ post.content | strip_html | strip_newlines | replace:'    ',' ' | replace:'   ',' ' | replace:'  ',' ' | xml_escape }}"
-    },
+  {% for post in site.posts %}
+    {% unless post.url contains '/it/' %}
+    {% assign count = count | plus:1 %}
+      "{{ count }}": {
+        "t": "{{ post.title | xml_escape }}",
+        "u": "{{ post.url | xml_escape }}",
+        "k": "fact",
+        "d": "{{ post.date | date: "%B %-d, %Y" }}",
+        {% if post.author %}"a": "{{ site.data.properties[post.author].title | xml_escape }}",{% endif %}
+        "c": "{{ post.content | strip_html | strip_newlines | replace:'    ',' ' | replace:'   ',' ' | replace:'  ',' ' | xml_escape }}"
+      },
+    {% endunless %}
   {% endfor %}
-  {% for page in site.pages %}{% if page.title %}{% assign count = count | plus:1 %}
-    "{{ count }}": {
-      "t": "{{ page.title | xml_escape }}",
-      "u": "{{ page.url | xml_escape }}",
-      "k": "{{ page.layout }}",
-      {% if page.author %}"a": "{{ site.data.properties[page.author].title | xml_escape }}",{% endif %}
-      "c": "{{ page.content | strip_html | strip_newlines | replace:'    ',' ' | replace:'   ',' ' | replace:'  ',' ' | xml_escape }}"
-    }{% unless forloop.last %},{% endunless %}
-  {% endif %}{% endfor %}
+  {% for page in site.pages %}{% if page.title %}
+    {% unless page.url contains '/it/' %}
+    {% assign count = count | plus:1 %}
+      "{{ count }}": {
+        "t": "{{ page.title | xml_escape }}",
+        "u": "{{ page.url | xml_escape }}",
+        "k": "{{ page.layout }}",
+        {% if page.author %}"a": "{{ site.data.properties[page.author].title | xml_escape }}",{% endif %}
+        "c": "{{ page.content | strip_html | strip_newlines | replace:'    ',' ' | replace:'   ',' ' | replace:'  ',' ' | xml_escape }}"
+      },
+    {% endunless %}
+
+  {% endif %}
+  {% endfor %}
+  "{{ count | plus: 1}}": {}
 
 }
